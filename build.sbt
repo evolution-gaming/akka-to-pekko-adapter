@@ -50,6 +50,7 @@ lazy val actor =
     .in(file("modules/actor"))
     .settings(commonSettings)
     .settings(
+      name := "akka-to-pekko-adapter-actor",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.actor
       )
@@ -60,6 +61,7 @@ lazy val cluster =
     .in(file("modules/cluster"))
     .settings(commonSettings)
     .settings(
+      name := "akka-to-pekko-adapter-cluster",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.cluster
       )
@@ -70,6 +72,7 @@ lazy val stream =
     .in(file("modules/stream"))
     .settings(commonSettings)
     .settings(
+      name := "akka-to-pekko-adapter-stream",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.stream
       )
@@ -80,6 +83,7 @@ lazy val `cluster-sharding` =
     .in(file("modules/sharding"))
     .settings(commonSettings)
     .settings(
+      name := "akka-to-pekko-adapter-sharding",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.sharding
       )
