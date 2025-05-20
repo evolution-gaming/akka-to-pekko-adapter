@@ -3,3 +3,29 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# sbt specific
+.cache
+.history
+target/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+
+# Idea
+.idea/
+*.iml
+*.ipr
+
+# Mac
+.DS_Store
+
+# Metals/Bloop/Vscode specific
+.metals
+metals.sbt
+.bloop
+.vscode
+.bsp
