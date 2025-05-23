@@ -44,7 +44,15 @@ lazy val root =
       publishArtifact := false
     )
     .settings(alias)
-    .aggregate(actor, cluster, stream)
+    .aggregate(
+      actor,
+      cluster,
+      stream,
+      spray,
+      http,
+      management,
+      `cluster-sharding`
+    )
 
 lazy val actor =
   project
@@ -87,5 +95,41 @@ lazy val `cluster-sharding` =
       name := "akka-to-pekko-adapter-sharding",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.sharding
+      )
+    )
+
+lazy val spray =
+  project
+    .in(file("modules/spray"))
+    .settings(commonSettings)
+    .settings(
+      name := "akka-to-pekko-adapter-spray",
+      libraryDependencies ++= Seq(
+        Dependencies.Pekko.spray
+      )
+    )
+
+lazy val http =
+  project
+    .in(file("modules/http"))
+    .dependsOn(actor)
+    .settings(commonSettings)
+    .settings(
+      name := "akka-to-pekko-adapter-http",
+      libraryDependencies ++= Seq(
+        Dependencies.Pekko.http
+      )
+    )
+
+lazy val management =
+  project
+    .in(file("modules/management"))
+    .settings(commonSettings)
+    .settings(
+      name := "akka-to-pekko-adapter-management",
+      libraryDependencies ++= Seq(
+        Dependencies.Pekko.management,
+        Dependencies.Pekko.bootstrap,
+        Dependencies.Pekko.`cluster-http`
       )
     )

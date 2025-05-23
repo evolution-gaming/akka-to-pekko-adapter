@@ -8,5 +8,12 @@ object Dependencies {
     val cluster = "org.apache.pekko" %% "pekko-cluster" % PekkoVersion
     val stream = "org.apache.pekko" %% "pekko-stream" % PekkoVersion
     val sharding = "org.apache.pekko" %% "pekko-cluster-sharding" % PekkoVersion
+    val http = "org.apache.pekko" %% "pekko-http" % PekkoHttpVersion
+    val spray = "org.apache.pekko" %% "pekko-http-spray-json" % PekkoHttpVersion
+    val management = "org.apache.pekko" %% "pekko-management" % PekkoHttpVersion
+    val bootstrap =
+      "org.apache.pekko" %% "pekko-management-cluster-bootstrap" % PekkoHttpVersion
+    val `cluster-http` =
+      "org.apache.pekko" %% "pekko-management-cluster-http" % PekkoHttpVersion
   }
 }
