@@ -112,7 +112,7 @@ lazy val spray =
 lazy val http =
   project
     .in(file("modules/http"))
-    .dependsOn(actor)
+    .dependsOn(actor, stream)
     .settings(commonSettings)
     .settings(
       name := "akka-to-pekko-adapter-http",
