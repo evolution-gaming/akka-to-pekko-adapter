@@ -11,4 +11,10 @@ package object stream {
     org.apache.pekko.stream.Materializer
   type Shape = org.apache.pekko.stream.Shape
   type Graph[A <: Shape, B] = org.apache.pekko.stream.Graph[A, B]
+  type OverflowStrategy = org.apache.pekko.stream.OverflowStrategy
+  val OverflowStrategy: org.apache.pekko.stream.OverflowStrategy.type =
+    org.apache.pekko.stream.OverflowStrategy
+  type QueueOfferResult = org.apache.pekko.stream.QueueOfferResult
+  val QueueOfferResult: org.apache.pekko.stream.QueueOfferResult.type =
+    org.apache.pekko.stream.QueueOfferResult
 }
