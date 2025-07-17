@@ -51,7 +51,8 @@ lazy val root =
       spray,
       http,
       management,
-      `cluster-sharding`
+      `cluster-sharding`,
+      `test-kit`
     )
 
 lazy val actor =
@@ -131,5 +132,16 @@ lazy val management =
         Dependencies.Pekko.management,
         Dependencies.Pekko.bootstrap,
         Dependencies.Pekko.`cluster-http`
+      )
+    )
+
+lazy val `test-kit` =
+  project
+    .in(file("modules/test-kit"))
+    .settings(commonSettings)
+    .settings(
+      name := "akka-to-pekko-adapter-test-kit",
+      libraryDependencies ++= Seq(
+        Dependencies.Pekko.`test-kit`,
       )
     )
