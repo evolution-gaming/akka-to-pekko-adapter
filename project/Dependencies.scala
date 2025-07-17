@@ -15,5 +15,7 @@ object Dependencies {
       "org.apache.pekko" %% "pekko-management-cluster-bootstrap" % PekkoHttpVersion
     val `cluster-http` =
       "org.apache.pekko" %% "pekko-management-cluster-http" % PekkoHttpVersion
+    val `test-kit` =
+      "org.apache.pekko" %% "pekko-testkit" % PekkoVersion
   }
 }
