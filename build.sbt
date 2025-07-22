@@ -46,6 +46,7 @@ lazy val root =
     .settings(alias)
     .aggregate(
       actor,
+      persistence,
       cluster,
       stream,
       spray,
@@ -63,6 +64,17 @@ lazy val actor =
       name := "akka-to-pekko-adapter-actor",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.actor
+      )
+    )
+
+lazy val persistence =
+  project
+    .in(file("modules/persistence"))
+    .settings(commonSettings)
+    .settings(
+      name := "akka-to-pekko-adapter-persistence",
+      libraryDependencies ++= Seq(
+        Dependencies.Pekko.persistence
       )
     )
 
