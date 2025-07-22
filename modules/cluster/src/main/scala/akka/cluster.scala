@@ -81,6 +81,11 @@ package object cluster {
       def unapply(event: ReachabilityChanged) =
         privates.ReachabilityChanged.unapply(event)
     }
+    type CurrentClusterState =
+      org.apache.pekko.cluster.ClusterEvent.CurrentClusterState
+    val CurrentClusterState
+        : org.apache.pekko.cluster.ClusterEvent.CurrentClusterState.type =
+      org.apache.pekko.cluster.ClusterEvent.CurrentClusterState
   }
   type JoinConfigCompatChecker =
     org.apache.pekko.cluster.JoinConfigCompatChecker

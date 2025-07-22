@@ -34,4 +34,8 @@ package object actor {
     org.apache.pekko.actor.RootActorPath
   type Timers = org.apache.pekko.actor.Timers
   val AddressFromURIString = org.apache.pekko.actor.AddressFromURIString
+  type CoordinatedShutdown = org.apache.pekko.actor.CoordinatedShutdown
+  val CoordinatedShutdown: org.apache.pekko.actor.CoordinatedShutdown.type =
+    org.apache.pekko.actor.CoordinatedShutdown
+  type ExtendedActorSystem = org.apache.pekko.actor.ExtendedActorSystem
 }
