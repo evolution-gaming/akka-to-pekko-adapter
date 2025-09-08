@@ -1,7 +1,7 @@
-import Dependencies._
-import sbt._
+import sbt.*
 
 ThisBuild / versionScheme := Some("early-semver")
+ThisBuild / versionPolicyIntention := Compatibility.BinaryCompatible
 
 def crossSettings[T](scalaVersion: String, if3: List[T], if2: List[T]) =
   CrossVersion.partialVersion(scalaVersion) match {
@@ -32,7 +32,12 @@ lazy val commonSettings = Seq(
 
 val alias: Seq[sbt.Def.Setting[?]] =
   addCommandAlias("build", "+all compile test") ++
-    addCommandAlias("check", "scalafmtCheck")
+    addCommandAlias("fmt", "+all scalafmtAll scalafmtSbt") ++
+    // `check` is called with `+` in release workflow
+    addCommandAlias(
+      "check",
+      "all versionPolicyCheck Compile/doc scalafmtCheckAll scalafmtSbtCheck"
+    )
 
 lazy val root =
   project
