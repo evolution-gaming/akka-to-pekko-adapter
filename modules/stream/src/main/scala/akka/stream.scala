@@ -17,4 +17,7 @@ package object stream {
   type QueueOfferResult = org.apache.pekko.stream.QueueOfferResult
   val QueueOfferResult: org.apache.pekko.stream.QueueOfferResult.type =
     org.apache.pekko.stream.QueueOfferResult
+  type SystemMaterializer = org.apache.pekko.stream.SystemMaterializer
+  val SystemMaterializer: org.apache.pekko.stream.SystemMaterializer.type =
+    org.apache.pekko.stream.SystemMaterializer
 }
