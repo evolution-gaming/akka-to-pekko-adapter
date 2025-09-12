@@ -1,10 +1,17 @@
 package akka.http.scaladsl
 
 package object model {
-
+  type HttpMethod = org.apache.pekko.http.scaladsl.model.HttpMethod
+  val HttpMethod: org.apache.pekko.http.scaladsl.model.HttpMethod.type =
+    org.apache.pekko.http.scaladsl.model.HttpMethod
+  val HttpMethods: org.apache.pekko.http.scaladsl.model.HttpMethods.type =
+    org.apache.pekko.http.scaladsl.model.HttpMethods
   type HttpEntity = org.apache.pekko.http.scaladsl.model.HttpEntity
   val HttpEntity: org.apache.pekko.http.scaladsl.model.HttpEntity.type =
     org.apache.pekko.http.scaladsl.model.HttpEntity
+  type StatusCode = org.apache.pekko.http.scaladsl.model.StatusCode
+  val StatusCode: org.apache.pekko.http.scaladsl.model.StatusCode.type =
+    org.apache.pekko.http.scaladsl.model.StatusCode
   val StatusCodes: org.apache.pekko.http.scaladsl.model.StatusCodes.type =
     org.apache.pekko.http.scaladsl.model.StatusCodes
   type HttpRequest = org.apache.pekko.http.scaladsl.model.HttpRequest
@@ -27,4 +34,17 @@ package object model {
     org.apache.pekko.http.scaladsl.model.MediaTypes
   val ContentTypes: org.apache.pekko.http.scaladsl.model.ContentTypes.type =
     org.apache.pekko.http.scaladsl.model.ContentTypes
+  type Uri = org.apache.pekko.http.scaladsl.model.Uri
+  val Uri: org.apache.pekko.http.scaladsl.model.Uri.type =
+    org.apache.pekko.http.scaladsl.model.Uri
+  type HttpHeader = org.apache.pekko.http.scaladsl.model.HttpHeader
+  val HttpHeader: org.apache.pekko.http.scaladsl.model.HttpMethod.type =
+    org.apache.pekko.http.scaladsl.model.HttpMethod
+  type MessageEntity = org.apache.pekko.http.scaladsl.model.MessageEntity
+  type ResponseEntity = org.apache.pekko.http.scaladsl.model.ResponseEntity
+  val ResponseEntity: org.apache.pekko.http.scaladsl.model.ResponseEntity.type =
+    org.apache.pekko.http.scaladsl.model.ResponseEntity
+  type AttributeKey[A] = org.apache.pekko.http.scaladsl.model.AttributeKey[A]
+  val AttributeKey: org.apache.pekko.http.scaladsl.model.AttributeKey.type =
+    org.apache.pekko.http.scaladsl.model.AttributeKey
 }

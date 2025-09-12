@@ -38,4 +38,7 @@ package object actor {
   val CoordinatedShutdown: org.apache.pekko.actor.CoordinatedShutdown.type =
     org.apache.pekko.actor.CoordinatedShutdown
   type ExtendedActorSystem = org.apache.pekko.actor.ExtendedActorSystem
+  type Scheduler = org.apache.pekko.actor.Scheduler
+  val Scheduler: org.apache.pekko.actor.Scheduler.type =
+    org.apache.pekko.actor.Scheduler
 }
