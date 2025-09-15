@@ -44,6 +44,7 @@ package object model {
   type ResponseEntity = org.apache.pekko.http.scaladsl.model.ResponseEntity
   val ResponseEntity: org.apache.pekko.http.scaladsl.model.ResponseEntity.type =
     org.apache.pekko.http.scaladsl.model.ResponseEntity
+  type RequestEntity = org.apache.pekko.http.scaladsl.model.RequestEntity
   type AttributeKey[A] = org.apache.pekko.http.scaladsl.model.AttributeKey[A]
   val AttributeKey: org.apache.pekko.http.scaladsl.model.AttributeKey.type =
     org.apache.pekko.http.scaladsl.model.AttributeKey
