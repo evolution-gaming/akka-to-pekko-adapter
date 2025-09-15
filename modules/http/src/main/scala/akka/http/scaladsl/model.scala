@@ -47,4 +47,9 @@ package object model {
   type AttributeKey[A] = org.apache.pekko.http.scaladsl.model.AttributeKey[A]
   val AttributeKey: org.apache.pekko.http.scaladsl.model.AttributeKey.type =
     org.apache.pekko.http.scaladsl.model.AttributeKey
+  type HttpCharset = org.apache.pekko.http.scaladsl.model.HttpCharset
+  val HttpCharset: org.apache.pekko.http.scaladsl.model.HttpCharset.type =
+    org.apache.pekko.http.scaladsl.model.HttpCharset
+  val HttpCharsets: org.apache.pekko.http.scaladsl.model.HttpCharsets.type =
+    org.apache.pekko.http.scaladsl.model.HttpCharsets
 }
