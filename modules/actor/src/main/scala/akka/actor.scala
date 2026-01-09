@@ -29,6 +29,9 @@ package object actor {
   type Address = org.apache.pekko.actor.Address
   val Address: org.apache.pekko.actor.Address.type =
     org.apache.pekko.actor.Address
+  type Extension = org.apache.pekko.actor.Extension
+  type ExtensionId[A <: org.apache.pekko.actor.Extension] =
+    org.apache.pekko.actor.ExtensionId[A]
   type RootActorPath = org.apache.pekko.actor.RootActorPath
   val RootActorPath: org.apache.pekko.actor.RootActorPath.type =
     org.apache.pekko.actor.RootActorPath
