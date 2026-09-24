@@ -20,5 +20,8 @@ object Dependencies {
       "org.apache.pekko" %% "pekko-management-cluster-http" % PekkoManagementVersion
     val `test-kit` =
       "org.apache.pekko" %% "pekko-testkit" % PekkoVersion
+    val `http-test-kit` =
+      "org.apache.pekko" %% "pekko-http-testkit" % PekkoHttpVersion
   }
+  val scalatest = "org.scalatest" %% "scalatest" % "3.2.19"
 }

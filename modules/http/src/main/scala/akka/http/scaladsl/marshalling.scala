@@ -8,4 +8,9 @@ package object marshalling {
     org.apache.pekko.http.scaladsl.marshalling.Marshaller
   type ToEntityMarshaller[A] =
     org.apache.pekko.http.scaladsl.marshalling.ToEntityMarshaller[A]
+  type ToResponseMarshallable =
+    org.apache.pekko.http.scaladsl.marshalling.ToResponseMarshallable
+  val ToResponseMarshallable
+      : org.apache.pekko.http.scaladsl.marshalling.ToResponseMarshallable.type =
+    org.apache.pekko.http.scaladsl.marshalling.ToResponseMarshallable
 }
