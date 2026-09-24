@@ -3,11 +3,15 @@ import sbt.*
 ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / versionPolicyIntention := Compatibility.BinaryCompatible
 
-def crossSettings[T](scalaVersion: String, if3: List[T], if2: List[T]) =
+def crossSettings[T](
+    scalaVersion: String,
+    if3: List[T],
+    if2: List[T]
+): List[T] =
   CrossVersion.partialVersion(scalaVersion) match {
-    case Some((3, _))       => if3
-    case Some((2, 12 | 13)) => if2
-    case _                  => Nil
+    case Some((3, _))  => if3
+    case Some((2, 13)) => if2
+    case _             => Nil
   }
 
 lazy val commonSettings = Seq(
@@ -19,7 +23,7 @@ lazy val commonSettings = Seq(
   organizationName := "Evolution",
   organizationHomepage := Some(url("https://evolution.com")),
   scalaVersion := crossScalaVersions.value.head,
-  crossScalaVersions := Seq("2.13.16", "3.3.6"),
+  crossScalaVersions := Seq("2.13.18", "3.3.8"),
   licenses := Seq(("MIT", url("https://opensource.org/licenses/MIT"))),
   scalacOptions ++= crossSettings(
     scalaVersion.value,
