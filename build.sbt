@@ -1,3 +1,4 @@
+import com.typesafe.tools.mima.core.*
 import sbt.*
 
 ThisBuild / versionScheme := Some("early-semver")
@@ -136,8 +137,15 @@ lazy val http =
     .settings(
       name := "akka-to-pekko-adapter-http",
       libraryDependencies ++= Seq(
-        Dependencies.Pekko.http
-      )
+        Dependencies.Pekko.http,
+        Dependencies.scalatest % Test,
+      ),
+      // `model.HttpHeader` used to point at the `HttpMethod` companion by mistake.
+      // Nothing compiled against it can call `HttpHeader.parse` etc., so fixing the type is safe.
+      mimaBinaryIssueFilters += ProblemFilters
+        .exclude[IncompatibleResultTypeProblem](
+          "akka.http.scaladsl.model.package.HttpHeader"
+        ),
     )
 
 lazy val management =

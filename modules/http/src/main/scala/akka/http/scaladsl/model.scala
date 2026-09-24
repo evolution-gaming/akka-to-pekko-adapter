@@ -38,8 +38,8 @@ package object model {
   val Uri: org.apache.pekko.http.scaladsl.model.Uri.type =
     org.apache.pekko.http.scaladsl.model.Uri
   type HttpHeader = org.apache.pekko.http.scaladsl.model.HttpHeader
-  val HttpHeader: org.apache.pekko.http.scaladsl.model.HttpMethod.type =
-    org.apache.pekko.http.scaladsl.model.HttpMethod
+  val HttpHeader: org.apache.pekko.http.scaladsl.model.HttpHeader.type =
+    org.apache.pekko.http.scaladsl.model.HttpHeader
   type MessageEntity = org.apache.pekko.http.scaladsl.model.MessageEntity
   type ResponseEntity = org.apache.pekko.http.scaladsl.model.ResponseEntity
   val ResponseEntity: org.apache.pekko.http.scaladsl.model.ResponseEntity.type =
