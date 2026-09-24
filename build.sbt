@@ -36,11 +36,11 @@ lazy val commonSettings = Seq(
 
 val alias: Seq[sbt.Def.Setting[?]] =
   addCommandAlias("build", "+all compile test") ++
-    addCommandAlias("fmt", "+all scalafmtAll scalafmtSbt") ++
+    addCommandAlias("fmt", "scalafmtRepo") ++
     // `check` is called with `+` in release workflow
     addCommandAlias(
       "check",
-      "all versionPolicyCheck Compile/doc scalafmtCheckAll scalafmtSbtCheck"
+      "all versionPolicyCheck Compile/doc scalafmtCheckRepo"
     )
 
 lazy val root =
