@@ -16,4 +16,6 @@ package object unmarshalling {
     org.apache.pekko.http.scaladsl.unmarshalling.FromResponseUnmarshaller[A]
   type FromMessageUnmarshaller[A] =
     org.apache.pekko.http.scaladsl.unmarshalling.FromMessageUnmarshaller[A]
+  type FromStringUnmarshaller[T] =
+    org.apache.pekko.http.scaladsl.unmarshalling.FromStringUnmarshaller[T]
 }

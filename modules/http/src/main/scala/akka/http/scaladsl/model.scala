@@ -53,4 +53,7 @@ package object model {
     org.apache.pekko.http.scaladsl.model.HttpCharset
   val HttpCharsets: org.apache.pekko.http.scaladsl.model.HttpCharsets.type =
     org.apache.pekko.http.scaladsl.model.HttpCharsets
+  type FormData = org.apache.pekko.http.scaladsl.model.FormData
+  val FormData: org.apache.pekko.http.scaladsl.model.FormData.type =
+    org.apache.pekko.http.scaladsl.model.FormData
 }

@@ -24,4 +24,10 @@ package object privates {
       org.apache.pekko.http.impl.settings.ConnectionPoolSettingsImpl
         .fromSubConfig(root, inner)
   }
+
+  object ModeledCompanion {
+    def nameFromClass[T](clazz: Class[T]): String =
+      org.apache.pekko.http.scaladsl.model.headers.ModeledCompanion
+        .nameFromClass(clazz)
+  }
 }

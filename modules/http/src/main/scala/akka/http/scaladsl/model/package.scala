@@ -31,4 +31,14 @@ package object headers {
   type HttpCookie = org.apache.pekko.http.scaladsl.model.headers.HttpCookie
   val HttpCookie: org.apache.pekko.http.scaladsl.model.headers.HttpCookie.type =
     org.apache.pekko.http.scaladsl.model.headers.HttpCookie
+  type ModeledCompanion[T] =
+    org.apache.pekko.http.scaladsl.model.headers.ModeledCompanion[T]
+  val ModeledCompanion
+      : org.apache.pekko.http.impl.privates.ModeledCompanion.type =
+    org.apache.pekko.http.impl.privates.ModeledCompanion
+  type `Content-Type` =
+    org.apache.pekko.http.scaladsl.model.headers.`Content-Type`
+  val `Content-Type`
+      : org.apache.pekko.http.scaladsl.model.headers.`Content-Type`.type =
+    org.apache.pekko.http.scaladsl.model.headers.`Content-Type`
 }

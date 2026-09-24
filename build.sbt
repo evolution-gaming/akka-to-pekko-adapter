@@ -58,7 +58,8 @@ lazy val root =
       http,
       management,
       `cluster-sharding`,
-      `test-kit`
+      `test-kit`,
+      `http-test-kit`
     )
 
 lazy val actor =
@@ -160,5 +161,20 @@ lazy val `test-kit` =
       name := "akka-to-pekko-adapter-test-kit",
       libraryDependencies ++= Seq(
         Dependencies.Pekko.`test-kit`,
+      )
+    )
+
+lazy val `http-test-kit` =
+  project
+    .in(file("modules/http-test-kit"))
+    .dependsOn(http, `test-kit`)
+    .settings(commonSettings)
+    .settings(
+      name := "akka-to-pekko-adapter-http-test-kit",
+      // new module: nothing to compare against until its first release
+      versionPolicyFirstVersion := Some("1.0.5"),
+      libraryDependencies ++= Seq(
+        Dependencies.Pekko.`http-test-kit`,
+        Dependencies.scalatest % "provided;test",
       )
     )
