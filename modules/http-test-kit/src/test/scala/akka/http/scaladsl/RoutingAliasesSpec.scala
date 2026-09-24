@@ -46,19 +46,25 @@ class RoutingAliasesSpec
   }
 
   "form fields" in {
-    Post("/", FormData("f" -> "v")) ~> FormFieldDirectives.formField("f")(complete(_)) ~> check {
+    Post("/", FormData("f" -> "v")) ~> FormFieldDirectives.formField("f")(
+      complete(_)
+    ) ~> check {
       responseAs[String] shouldBe "v"
     }
   }
 
   "javadsl rejection" in {
-    Get("/") ~> RouteDirectives.reject(AuthorizationFailedRejection.get) ~> check {
+    Get("/") ~> RouteDirectives.reject(
+      AuthorizationFailedRejection.get
+    ) ~> check {
       rejection shouldBe AuthorizationFailedRejection.get
     }
   }
 
   "header helpers" in {
-    ModeledCompanion.nameFromClass(classOf[`Content-Type`]) shouldBe "Content-Type"
+    ModeledCompanion.nameFromClass(
+      classOf[`Content-Type`]
+    ) shouldBe "Content-Type"
     HeaderMagnet
       .fromClassTagNormalHeader(implicitly[ClassTag[`Content-Type`]])
       .headerName shouldBe "Content-Type"
