@@ -31,6 +31,12 @@ lazy val commonSettings = Seq(
     if3 = List("-release:17"),
     if2 = List("-release:17", "-Xsource:3"),
   ),
+  dependencyOverrides ++= crossSettings(
+    scalaVersion.value,
+    if3 =
+      List(scalaOrganization.value %% "scala3-library" % scalaVersion.value),
+    if2 = Nil,
+  ),
   scalacOptsFailOnWarn := Some(false),
   publishTo := Some(Resolver.evolutionReleases),
 )
