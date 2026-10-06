@@ -24,7 +24,7 @@ lazy val commonSettings = Seq(
   organizationName := "Evolution",
   organizationHomepage := Some(url("https://evolution.com")),
   scalaVersion := crossScalaVersions.value.head,
-  crossScalaVersions := Seq("2.13.18", "3.3.8"),
+  crossScalaVersions := Seq("2.13.18", "3.9.0"),
   licenses := Seq(("MIT", url("https://opensource.org/licenses/MIT"))),
   scalacOptions ++= crossSettings(
     scalaVersion.value,
