@@ -3,7 +3,7 @@ import sbt.*
 object Dependencies {
   object Pekko {
     val PekkoVersion = "1.2.0"
-    val PekkoHttpVersion = "1.2.0"
+    val PekkoHttpVersion = "1.4.1"
     val PekkoManagementVersion = "1.1.1"
     val actor = "org.apache.pekko" %% "pekko-actor" % PekkoVersion
     val persistence = "org.apache.pekko" %% "pekko-persistence" % PekkoVersion
