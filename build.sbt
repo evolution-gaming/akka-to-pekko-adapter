@@ -39,6 +39,12 @@ lazy val commonSettings = Seq(
   ),
   scalacOptsFailOnWarn := Some(false),
   publishTo := Some(Resolver.evolutionReleases),
+  versionPolicyIgnored ++= Seq(
+    // TODO remove after 1.0.7 is out
+    // ssl-config-core between 0.6.1 and 0.7.1 removed deprecated and debug API, ignoring, just as Pekko does for 1.3.0 release
+    // com.typesafe:ssl-config-core_2.13: incompatible version change from 0.6.1 to 0.7.1 (compatibility: package versioning policy)
+    "com.typesafe" %% "ssl-config-core",
+  ),
 )
 
 val alias: Seq[sbt.Def.Setting[?]] =
