@@ -1,8 +1,8 @@
 import com.typesafe.tools.mima.core.*
 import sbt.*
 
-ThisBuild / versionScheme := Some("early-semver")
-ThisBuild / versionPolicyIntention := Compatibility.BinaryCompatible
+versionScheme := Some("early-semver")
+versionPolicyIntention := Compatibility.BinaryCompatible
 
 def crossSettings[T](
     scalaVersion: String,
@@ -18,14 +18,14 @@ def crossSettings[T](
 lazy val commonSettings = Seq(
   organization := "com.evolution",
   homepage := Some(
-    url("https://github.com/evolution-gaming/akka-to-pekko-adapter")
+    uri("https://github.com/evolution-gaming/akka-to-pekko-adapter")
   ),
   startYear := Some(2025),
   organizationName := "Evolution",
-  organizationHomepage := Some(url("https://evolution.com")),
+  organizationHomepage := Some(uri("https://evolution.com")),
   scalaVersion := crossScalaVersions.value.head,
   crossScalaVersions := Seq("2.13.18", "3.3.8"),
-  licenses := Seq(("MIT", url("https://opensource.org/licenses/MIT"))),
+  licenses := Seq(("MIT", uri("https://opensource.org/licenses/MIT"))),
   scalacOptions ++= crossSettings(
     scalaVersion.value,
     if3 = List("-release:17"),
@@ -48,7 +48,7 @@ lazy val commonSettings = Seq(
 )
 
 val alias: Seq[sbt.Def.Setting[?]] =
-  addCommandAlias("build", "+all compile test") ++
+  addCommandAlias("build", "+all compile testFull") ++
     addCommandAlias("fmt", "scalafmtRepo") ++
     // `check` is called with `+` in release workflow
     addCommandAlias(
